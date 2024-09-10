@@ -1,0 +1,41 @@
+what is Transitional invariance in the
+convolutional neural networks ?
+
+which parts of the convolutional
+neural networks makes Transitional
+invariance feature ?
+
+تغییرات محلی در شبکه‌های عصبی پیچشی (CNNs) به توانایی شبکه برای تشخیص الگوها یا ویژگی‌ها در یک تصویر بدون توجه به مکان خاص آن در تصویر اشاره دارد. این بدان معناست که شبکه می‌تواند الگوی مشابهی را، مانند یک لبه یا یک بافت، حتی اگر در بخش‌های مختلف تصویر ورودی ظاهر شود، شناسایی کند.
+
+اجزای کلیدی CNNs که امکان تغییرات محلی را فراهم می‌کنند عبارتند از:
+
+1. لایه‌های پیچشی: این لایه‌ها از فیلترها (همچنین به عنوان هسته‌ها شناخته می‌شوند) برای پویش تصویر ورودی استفاده می‌کنند و الگوهای محلی مانند لبه‌ها، بافت‌ها و اشکال را ضبط می‌کنند. استفاده از وزن‌های مشترک در لایه‌های پیچشی به شبکه این امکان را می‌دهد که الگوها را بدون توجه به مکان خود در تصویر شناسایی کند.
+
+2. لایه‌های ادغام: لایه‌های ادغام، مانند ادغام بیشینه یا ادغام میانگین، نقش فرآیندهای تولید شده توسط لایه‌های پیچشی را کم می‌کنند. این کاهش در نمونه‌برداری به ایجاد تغییرات مکانی منجر می‌شود با کاهش حساسیت به مکان دقیق ویژگی‌ها در تصویر ورودی.
+
+3. توابع فعال‌ساز: توابع فعال‌ساز مانند ReLU (واحد خطی تقویت شده) تقابل تغییرات هستند، به این معنا که برای ورودی مشابه، خروجی یکسان را تولید می‌کنند بدون توجه به مکان آن در نقشه ویژگی. این خصوصیت در حفظ تغییرات محلی کمک می‌کند.
+
+با بهره‌برداری از این اجزا، CNNs قادر به به دست آوردن و شناسایی الگوهای بصری در تصاویر بدون توجه به مکان دقیق آن‌ها هستند که منجر به یادگیری ویژگی‌های استحکام پذیر به تغییرات و بهبود قابلیت عموم سازی آن‌ها می‌شود.
+
+
+
+Please provide me python code to train MLP network with
+minimum accuracy 90 percent on the test dataset of the MNIST.
+
+Also please provide the LeNet network with the following description :
+
+Image : 28(height) * 28(width) * 1 (channel)
+Convolution with 5*5 kernel + 2 padding :  28 * 28 * 6
+
+Pool with 2*2 average kernel + 2 stride : 14*14*6
+Convolution with 5*5 kernel + (no pad) :  14 * 14 * 6
+
+Pool with 2*2 average kernel + 2 stride : 5 * 5 * 16
+
+flatten Dense : 120 fully connected neurons
+
+sigmoid Dense : 84 fully connected neurons
+
+sigmoid Dense : 10 fully connected neurons
+
+output : 1 of 10 classes.

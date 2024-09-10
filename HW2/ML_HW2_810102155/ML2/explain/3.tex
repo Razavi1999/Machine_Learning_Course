@@ -1,0 +1,70 @@
+\begin{boxC}
+    
+
+To find the solution to the Regularized Least Squares (RLS) objective function in L2 regression, we need to minimize the following function:
+
+\[
+\text{minimize: }  Y - X\beta^2 + \lambda\beta^2
+\]
+
+where:
+- \(Y\) is the vector of observed target values,
+- \(X\) is the design matrix of predictor variables,
+- \(\beta\) is the vector of coefficients to be estimated,
+- \(\lambda\) is the regularization parameter.
+
+Let's denote the first term \(Y - X\beta^2\) as \(L(\beta)\) and the second term \(\lambda\beta^2\) as \(R(\beta)\). The objective function can be rewritten as:
+
+\[
+\text{minimize: } L(\beta) + R(\beta)
+\]
+
+
+\[
+\nabla(L(\beta) + R(\beta)) = 0
+\]
+
+Expanding the gradient operation, we get:
+
+\[
+\nabla L(\beta) + \nabla R(\beta) = 0
+\]
+
+Taking the derivative of \(L(\beta)\) with respect to \(\beta\) gives us:
+
+\[
+\nabla L(\beta) = -2X^T(Y - X\beta)
+\]
+
+Taking the derivative of \(R(\beta)\) with respect to \(\beta\) gives us:
+
+\[
+\nabla R(\beta) = 2\lambda\beta
+\]
+
+Now, we can rewrite the equation as:
+
+\[
+-2X^T(Y - X\beta) + 2\lambda\beta = 0
+\]
+
+Rearranging the terms, we get:
+
+\[
+X^TX\beta - X^TY + \lambda\beta = 0
+\]
+
+
+\[
+(X^TX + \lambda I)\beta = X^TY
+\]
+
+% 
+
+\[
+\beta = (X^TX + \lambda I)^{-1}X^TY
+\]
+
+\end{boxC}
+
+% This is the solution to the Regularized Least Squares (RLS) objective function in L2 regression. The regularization term helps prevent overfitting and improves the generalization of the model by shrinking the coefficients towards zero.

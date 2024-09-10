@@ -1,0 +1,88 @@
+\begin{boxK}
+    \begin{equation*}
+        \vec{q_m} = \alpha \vec{q} 
+        + \frac{\beta}{\left D_r \right} \sum_{\vec{d_j} \in D_r} \vec{d_j}
+        - \frac{\gamma}{\left D_nr \right} \sum_{\vec{d_j} \in D_nr} \vec{d_j}
+    \end{equation*}
+
+    در گام نخست پارامترها را طبق خواسته سوال برابر یک در نظر خواهیم گرفت.
+    \begin{equation}
+        \alpha = 1 
+        ,
+        \beta = 1 
+        , 
+        \gamma = 1
+    \end{equation}
+
+    سپس به محاسبه کوئری اصلاح شده می‌پردازیم.
+
+    \begin{equation*}
+        \vec{q_0} = (0 , 0 , 0 , 0 , 1 , 1 , 1)  
+    \end{equation*}
+
+    \begin{equation*}
+        \vec{d_{R1}} = (0 , 0 , 0, 1 , 0 , 1 , 2)
+        ,   
+        \vec{d_{R2}} = (0 , 0 , 1 , 0 , 1 , 1 , 1)  
+    \end{equation*}
+
+    \begin{equation*}
+        \vec{d_{NR1}} = (1 , 1 , 1 , 0 , 1 , 0 , 0)
+        ,   
+        \vec{d_{NR2}} = (1 , 1 , 0 , 1 , 1 , 0 , 0)  
+    \end{equation*}
+
+    \begin{equation*}
+        \vec{q_1} = \alpha \vec{q_0} 
+        + \frac{\beta}{\left D_r \right} \sum_{\vec{d_j} \in D_r} \vec{d_j}
+        - \frac{\gamma}{\left D_{nr} \right} \sum_{\vec{d_j} \in D_{nr}} \vec{d_j}
+    \end{equation*}
+
+    \begin{equation*}
+        \vec{q_1} = (0 , 0 , 0 , 0 , 0.5 , 2 ,  2.5)
+    \end{equation*}
+
+    در درجه‌ی اول بعد از محاسبه میزان شباهت کوئری اصلاح شده و داکیومنت‌ها ، 
+    متوجه خواهیم‌شد که اسناد 
+    \lr{relevant}
+    فاصله قابل‌توجه‌تری با اسناد
+    \lr{non-relevant}
+    خواهند گرفت.
+
+    \begin{equation*}
+        Sim(q_0 , d_{R1}) = 3 ,
+        Sim(q_0 , d_{R2}) = 3 ,
+        Sim(q_0 , d_{NR1}) = 1 ,
+        Sim(q_0 , d_{NR2}) = 1 
+    \end{equation*}
+
+    \begin{equation*}
+        Sim(q_1 , d_{R1}) = 7 ,
+        Sim(q_1 , d_{R2}) = 5 ,
+        Sim(q_1 , d_{NR1}) = 0.5 ,
+        Sim(q_1 , d_{NR2}) = 0.5 
+    \end{equation*}
+
+    همچنین با توجه به بهبود میزان شباهت بین کوئری اول و دوم ، فاصله گرفتن اسناد مرتبط و نامرتبط ، به بهبود کوئری می‌پردازیم.
+
+    \begin{equation*}
+        \vec{q_2} = \alpha \vec{q_1} 
+        + \frac{\beta}{\left D_r \right} \sum_{\vec{d_j} \in D_r} \vec{d_j}
+        - \frac{\gamma}{\left D_{nr} \right} \sum_{\vec{d_j} \in D_{nr}} \vec{d_j}
+    \end{equation*}
+
+    \begin{equation*}
+        \vec{q_2} = (0 , 0 , 0.35 , 0.35 , 0.85 , 2.8 ,  3.7)
+    \end{equation*}
+
+    \begin{equation*}
+        Sim(q_2 , d_{R1}) = 13.9 ,
+        Sim(q_2 , d_{R2}) = 7.7 ,
+        Sim(q_2 , d_{NR1}) = 1.2 ,
+        Sim(q_2 , d_{NR2}) = 1.2 
+    \end{equation*}
+    
+    % باز هم فاصله میان اسناد مرتبط و نامرتبط افزایش یافت.
+
+    
+\end{boxK}

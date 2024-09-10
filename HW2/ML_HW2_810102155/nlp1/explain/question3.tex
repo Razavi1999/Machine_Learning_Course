@@ -1,0 +1,57 @@
+\begin{boxC}
+    برای ساختن مدل 
+    \lr{N-gram}
+    و همچنین محاسبه احتمالات پیش‌آمد یک کلمه خاص بعد از یک مجموعه کلمه می‌توان از ماتریس دوبعدی استفاده کرد.
+
+    در این صورت با صفرهای زیادی روبرو خواهیم شد که راهکار مرسوم برای مقابله با آن استفاده از هموارساز
+    \lr{add-k smoothing}
+    می‌باشد.
+    
+    اما رویکردی که در این تمرین پیش‌گرفته‌ایم ، استفاده از ساختمان‌داده دیکشنری برای ذخیره تعداد ظاهر شدن یک کلمه بعد از یک مجموعه توالی خاص است .
+
+    در این صورت ما مشکل
+    \lr{data sparcity}
+    نخواهیم داشت.
+    همچنین رویکردی که در این تمرین پیاده‌سازی کرده‌ام با یک 
+    \lr{iteration}
+    تمام شمارش‌ها و محاسبات صورت می‌پذیرد.
+    (پیچیدگی زمانی الگوریتم 
+    \lr{O(n)} 
+    خواهد بود.
+    )
+مجموعه رشته‌هایی که بعد از رشته معلوم توسط مدل
+تولید خواهدشد عبارت‌است از :
+    
+    \lr{bigram} : 
+    \newline
+    \lr{Knowing well the windings of the trail he 
+    \newline
+    \color{red} come assembl compani fag princess brynilda wife affianc malud assert}
+
+    \lr{3-gram} :
+    \newline
+    \color{black}
+    \lr{Knowing well the windings of the trail he 
+    \newline
+    \color{red} halfwit scare countri locat unit state world cost almost restrict}
+
+    \lr{5-gram}
+    \newline
+    \color{black}
+    \lr{Knowing well the windings of the trail he 
+    \newline
+    \color{red}  halfwit scare countri locat unit state part world cost almost}
+
+\end{boxC}
+
+\begin{boxC}
+    در صورت استفاده از مدل
+    \lr{n-gram}
+    برای 
+    \lr{n}
+      های خیلی بزرگ ، در صورت استفاده از ماتریس با مشکل حافظه روبرو خواهیم‌بود .
+      همچنین پیچیدگی زمانی الگوریتم نیز افزایش خواهد یافت.
+
+      در صورت اسفاده از رویکردی که ما در این تمرین ارائه کردیم نیز همانطورکه در نتایج از ۳ به ۵ مشاهده‌می‌شود ، میزان بهبود به صورت مشهود نبوده است و میزان رخداد‌ها به مراتب کمتر خواهدشد.
+      (میزان بهبود در دقت عملکرد مدل چشمگیر نخواهد بود.)
+\end{boxC}

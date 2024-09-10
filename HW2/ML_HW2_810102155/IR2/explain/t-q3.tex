@@ -1,0 +1,104 @@
+\begin{boxC}
+    بخش اول
+    
+    \begin{equation*}
+        P("neural" | D1) = 0.7 * \frac{1}{16} + 0.3 * \frac{1}{1000} = 0.04405
+    \end{equation*}
+
+    \begin{center}
+    \lr{Dirichlet Prior}
+    \end{center}
+
+    \begin{equation*}
+        P(W | d) = 
+        \frac{\lvert d \rvert}{\lvert d \rvert + \mu} \frac{c(w , d)}{\lvert d \rvert}
+        + 
+        \frac{\mu}{\lvert d \rvert + \mu} P(W | C)
+    \end{equation*}
+
+    \begin{equation*}
+        P("SVM" | C) = \frac{1}{33}
+    \end{equation*}
+
+    بخش دوم
+    \begin{equation*}
+        P("SVM" | D2) = \frac{17}{17 + 1500} * \frac{1}{17} + \frac{1500}{17 + 1500} * \frac{1}{33} = 0.03062264
+    \end{equation*}
+\end{boxC}
+
+\begin{boxE}
+    بخش سوم 
+
+    \newline
+    \lr{JM Smoothing}
+    \begin{equation*}
+        P(machine learning models | D1) =
+        P(machine | D1) * P(learning | D1) * P(models | D1) = 0.000475085
+    \end{equation*}
+
+    \begin{equation*}
+        P(machine learning models | D2) =
+        P(machine | D2) * P(learning | D2) * P(models | D2) = 0.000354225
+    \end{equation*}
+
+    \lr{Dirichlet Smoothing}
+
+    \begin{equation*}
+        P(machine learning models | D1) =
+        P(machine | D1) * P(learning | D1) * P(models | D1) = 0.000445664
+    \end{equation*}
+
+    \begin{equation*}
+        P(machine learning models | D2) =
+        P(machine | D2) * P(learning | D2) * P(models | D2) = 0.000442364
+    \end{equation*}
+\end{boxE}
+
+\begin{boxC}
+    برای هموار ساز
+    \lr{Dirichlet}
+    سند شماره ۱ با احتمال بالاتری بازگردانده خواهد شد.
+    (البته اختلاف میزان احتمال سند۱ خیلی قابل توجه به نسبت سند ۲ نیست.)
+
+     برای هموار ساز
+    \lr{JM}
+    سند شماره ۱ با احتمال بالاتری بازگردانده خواهد شد.
+    (این بار با اختلاف محسوس‌تری این سند بازگردانده خواهد شد.)
+\end{boxC}
+
+\begin{boxE}
+    از برتری‌های 
+    \lr{JM}
+    نسبت به 
+    \lr{Dirichlet}
+    در مرتب‌سازی اسناد ممکن است شامل موارد زیر باشد :
+    (همواره این اتفاق نمی‌افتد و مورد به مورد ممکن است متفاوت باشد)
+    
+    \begin{enumerate}
+        \item 
+        تعمیم‌پذیری : یکی از برتری‌های 
+        \lr{JM}
+        نسبت به
+        \lr{Dirichlet}
+        این است که این روش قابلیت تعمیم‌پذیری بیشتری دارد.
+        به عبارت دیگر
+        \lr{JM}
+        قادر است بهتر با تغییرات در مجموعه اسناد و یا مجموعه کلمات موجود در اسناد ، سازگاری یابد.
+        احساس می‌کنم بیشتر به خاطر این که متغیر لاندا بین صفر و یک نوسان می‌کند راحت‌تر می‌توان آن را تغمیم داد.
+        
+        \item 
+        انعطاف‌ پذیری :
+        \lr{JM}
+        انعطاف بیشتری در تنظیم پارامترهای خود دارد که این امکان را به ما می‌دهد که بهتر بتوانیم آن را به وضعیت خاص داده‌ها و مساله مورد نظرمان تظبیق بدهیم.
+
+        \item 
+        استفاده از اطلاعات پیشین
+ 
+
+        \item 
+        عملکرد بهتر در موارد پراکنده : 
+        در شرایطی که داده‌ها پراکنده باشد ، این روش ممکن است عملکرد بهتری داشته باشد و بهبود قابل توجهی نسبت به 
+        \lr{Dirichlet}
+        داشته باشد .
+    \end{enumerate}
+\end{boxE}

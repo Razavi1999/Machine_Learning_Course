@@ -1,0 +1,181 @@
+\begin{boxK}
+    \begin{equation*}
+        P(Minus | Doc1) < P(Plus | Doc1)
+    \end{equation*}
+
+    \begin{equation*}
+        P(Minus | Doc2) > P(Plus | Doc2)
+    \end{equation*}
+
+    \begin{equation*}
+        P(Minus | Doc3) < P(Plus | Doc3)
+    \end{equation*}
+
+    \begin{equation*}
+        P(Minus | Doc4) > P(Plus | Doc4)
+    \end{equation*}
+
+    \begin{equation*}
+        P(Minus | Doc5) < P(Plus | Doc5)
+    \end{equation*}
+
+\end{boxK}
+
+
+\begin{boxC}
+    با توجه به نتایج بالا ، هر یک از اسناد برچسب متناظر خود را دریافت خواهند کرد.
+
+    بر اساس منطق این رده‌بند ، هر کدام که از این اسناد که احتمال شرطی بالاتری برای هر کدام از کلاس‌ها داشته‌باشد ، به آن کلاس مربوط می‌شود.
+
+    باید به مقایسه دو عبارت زیر به ازای سند ۶ و ۷ بپردازیم و سپس برچسب متناظر با آن داده را بر روی سند مدنظر بزنیم.
+
+    \begin{equation*}
+        P(plus) * P(W_{1} | plus) * P(W_{2} | plus) * P(W_{3} | plus) * ... * P(W_{n} | plus)
+    \end{equation*}
+
+      \begin{equation*}
+        P(minus) * P(W_{1} | minus) * P(W_{2} | minus) * P(W_{3} | minus) * ... * P(W_{n} | minus)
+    \end{equation*}
+
+    با توجه به معادلات جایگاه نامعادلات بالا ، به داده‌های زیر خواهیم رسید : 
+
+    \begin{equation*}
+        P(plus) = \frac{3}{5}
+    \end{equation*}
+
+    \begin{equation*}
+        P(minus) = \frac{2}{5}
+    \end{equation*}
+    
+\end{boxC}
+
+\begin{boxK}
+    \begin{equation*}
+        P(love | plus) = \frac{1 + 1}{11 + 6} = \frac{2}{17}  
+    \end{equation*}
+
+    \begin{equation*}
+        P(movie | plus) = \frac{4 + 1}{11 + 6} = \frac{5}{17}  
+    \end{equation*}
+
+    \begin{equation*}
+        P(great | plus) = \frac{2 + 1}{11 + 6}  = \frac{3}{17}  
+    \end{equation*}
+
+    \begin{equation*}
+        P(good | plus) = \frac{2 + 1}{11 + 6} = \frac{3}{17}
+    \end{equation*}
+
+    \begin{equation*}
+        P(acting | plus) = \frac{1 + 1}{11 + 6} = \frac{2}{17}    
+    \end{equation*}
+
+    \begin{equation*}
+        P(I | plus) = \frac{1 + 1}{11 + 6} = \frac{2}{17}   
+    \end{equation*}
+    
+\end{boxK}
+
+\begin{boxK}
+    \begin{equation*}
+        P(hated | minus) = \frac{1 + 1}{5 + 5} = \frac{2}{10}
+    \end{equation*}
+
+    \begin{equation*}
+        P(I | minus) = \frac{1 + 1}{5 + 5} = \frac{2}{10}
+    \end{equation*}
+
+    \begin{equation*}
+        P(movie | minus) = \frac{1 + 1}{5 + 5} = \frac{2}{10}
+    \end{equation*}
+
+    \begin{equation*}
+        P(poor | minus) = \frac{1 + 1}{5 + 5} = \frac{2}{10}
+    \end{equation*}
+
+    \begin{equation*}
+        P(acting | minus) = \frac{1 + 1}{5 + 5} = \frac{2}{10}
+    \end{equation*}
+\end{boxK}
+
+\begin{boxC}
+    \begin{center}
+        \lr{Document6 : I loved the poor play.}
+        % \newline
+    \end{center}
+
+    \begin{equation*}
+        P(plus | Document6) = P(plus) * \frac{P(love | plus) * P(I | plus) * P(poor | plus) * P(play | plus)}{P(Document6)}
+    \end{equation*}
+
+    \begin{equation*}
+        P(minus | Document6) = P(minus) * \frac{P(love | minus) * P(I | minus) * P(poor | minus) * P(play | minus)}{P(Document6)}
+    \end{equation*}
+
+    با توجه به این که مقدار احتمال سند ششم برای هر دو ترم با هم برابر است ، به صورت زیر تخمین خواهیم زد :
+    
+    \begin{equation*}
+        P(plus | Document6) = \frac{3}{5} * \frac{2}{17} * \frac{2}{17} * \frac{1}{17} * \frac{1}{17} 
+        = 0.000028735 
+    \end{equation*}
+
+    \begin{equation*}
+        P(minus | Document6) = \frac{2}{5} * \frac{1}{10} * \frac{2}{10} * \frac{2}{10} * \frac{1}{10} = 
+        0.00016
+    \end{equation*}
+
+    برچسب سند ششم منفی خواهد بود.
+\end{boxC}
+
+\newpage
+
+\begin{boxC}
+    \begin{center}
+        \lr{Document7 : ‫‪I‬‬ ‫‪hated‬‬ ‫‪the‬‬ ‫‪play‬‬ ‫‪movie‬‬.}
+    \end{center}
+
+    همانند جایگاه معادلات بالا برای سند ۶ ، مقادیر احتمالاتی را برای کلاس‌های ممکن برای سند ۷ را محاسبه خواهیم کرد :
+
+    \begin{equation*}
+        P(plus | Document7) = \frac{3}{5} * \frac{2}{17} * \frac{1}{17} * \frac{1}{17} * \frac{5}{17} = 0.00007183822
+    \end{equation*}
+
+    \begin{equation*}
+        P(minus | Document7) = \frac{2}{5} * \frac{2}{10} * \frac{2}{10} * \frac{2}{10} * \frac{1}{10} = 0.00032
+    \end{equation*}
+
+    
+    برچسب سند هفتم منفی خواهد بود.    
+\end{boxC}
+
+\begin{boxL}
+    با توجه به نتایج بالا و وزن  کلمه مثبتی همچون 
+    \lr{love}
+    و وزن منفی کلمه‌ای چون 
+    \lr{poor}
+    می‌توان پیش‌بینی نمود که وزن بیشتر به سمت کلاس منفی باشد ، چرا که احتمال منفی به شرط کلمه 
+    \lr{poor}
+    بسیار بیشتر از احتمال مثبت به شرط کلمه
+    \lr{love}
+    است.
+    
+    \begin{equation*}
+        P(minus | poor) > P(plus | love)
+    \end{equation*}
+    
+    
+    و همچنین وزن کلمه منفی مانند
+    \lr{hate}
+    همچین نتایجی قابل پیش‌بینی بود.
+
+    نتایج به دست‌آمده تا حد خوبی منطقی هستند. 
+
+     
+     این نتایج به نظر بیشتر وابسته به داده‌های 
+    پس‌زمینه 
+    \lr{Background}
+    ما هستند.
+    وابستگی میزان احتمال هر کلاس به شرط هر کلمه که از داده‌های پس‌زمینه ما به دست آمدند این قضیه را بیشتر اثبات می‌کند.
+    
+\end{boxL}
+

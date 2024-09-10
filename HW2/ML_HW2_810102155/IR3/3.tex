@@ -1,0 +1,150 @@
+\subsection{۳-الف}
+
+\begin{boxC}
+    \begin{equation*}
+        S(Q \cup {q} , D1) = S(Q , D1) + S(q , D1)
+    \end{equation*}
+
+    \begin{equation*}
+        S(Q \cup {q} , D2) = S(Q , D2) + S(q , D2)
+    \end{equation*}
+
+    \color{red}
+    \begin{equation*}
+        S(q , D1) = 0
+    \end{equation*}
+
+    \begin{equation*}
+        S(Q , D2) = S(Q , D1)
+    \end{equation*}
+
+    \color{black}
+    \begin{equation*}
+        S(Q \cup {q} , D1) < S(Q \cup {q} , D2) \implies S(q , D2) > 0
+    \end{equation*}
+
+    تنها ترمی که باید از صفر بزرگ‌تر باشد را در زیر می‌نویسیم :
+
+    \begin{equation*}
+        \ln \frac{N - df(q) + 0.5}{df(q) + 0.5} * 
+        \frac{(k_{1} + 1) * c(q , D2)}{k_{1}(1 - b + b\frac{\left D \right}{avdl})}
+        \frac{(k_{3} + 1) c(q , Q)}{k_{3} + c(q , Q)} > 0
+    \end{equation*}
+
+    \begin{equation*}
+        \ln \frac{N - df(q) + 0.5}{df(q) + 0.5} > 0
+    \end{equation*}
+
+    \begin{equation*}
+        \ln \frac{N - df(q) + 0.5}{df(q) + 0.5} > \ln (1)
+    \end{equation*}
+
+    \begin{equation*}
+        \frac{N - df(q) + 0.5}{df(q) + 0.5} > 1
+    \end{equation*}
+
+    \begin{equation*}
+        \frac{N}{2} > df(q)
+    \end{equation*}
+
+    \color{red}
+    شرط برقرار بودن محدودیت
+    \lr{‫‪Lower‬‬ ‫‪Bounding‬‬ ‫‪Constraint‬‬ ‫‪1‬‬}
+    برای روش
+    \lr{Okapi}
+    آن است که تعداد وقوع ترم اضافه‌شده در اسناد ، کمتر از نصف کل اسناد باشد.
+    
+\end{boxC}
+
+\newpage
+
+\subsection{۳-ب}
+\begin{boxC}
+    \begin{equation*}
+        S(Q , D \cup {q}) > S(Q , D)    
+    \end{equation*}
+
+    \begin{equation*}
+        S(Q , D) = \sum_{t \in q \cap D} \frac{1 + \ln (1 + \ln (c(t , D)))}{1 - s + s \frac{\left D \right}{avdl}} 
+ * c(t , Q) * \ln \frac{N + 1}{df(t)}
+    \end{equation*}
+
+    \begin{equation*}
+        S(Q , D \cup {q}) = \sum_{t \in q \cap D \cup {q}} \frac{1 + \ln (1 + \ln (c(t , D)))}{1 - s + s \frac{\left D+1\right}{avdl}} 
+ * c(t , Q) * \ln \frac{N + 1}{df(t)}
+    \end{equation*}
+
+    \begin{equation*}
+        S(Q , D \cup {q}) > S(Q , D)
+    \end{equation*}
+
+    برای ارضای شرط فوق می‌بایستی چند حالت را در نظر بگیریم :
+
+    
+    \begin{enumerate}
+        \item 
+        عبارت سمت راستی یک ترم بیشتر دارد که تنها شرط مثبت بودن آن این است که کوئری ترم
+        \lr{q}
+        حداقل یک‌بار در سند ظاهر شده باشد.
+        (اثبات در پایین)
+
+        
+        \item  
+         بزرگی عبارت سمت چپ به ازای ترم‌های مشترک دو 
+        عبارت وابسته به مقدار 
+        \lr{s}
+        آن‌هاست. 
+        چون که طول سند عبارت سمت راست
+        یک واحد بیشتر از طول سند عبارت سمت چپ می‌باشد ، باید مقدار 
+        \lr{s}
+        به درستی تنظیم شود.    
+    
+    \end{enumerate}
+
+    \begin{center}
+        اثبات (۱)
+    \end{center}
+    % اثبات (۱) : 
+    
+    \begin{equation*}
+        1 + \ln (1 + \ln (c(q , D))) > 0
+    \end{equation*}
+
+    \begin{equation*}
+       1 + \ln (c(q , D)) > \frac{1}{e} 
+    \end{equation*}
+
+    \begin{equation*}
+       \ln (c(q , D)) > \frac{1}{e} - 1
+    \end{equation*}
+
+    \begin{equation*}
+        c(q , D) > e ^ (\frac{1-e}{e})
+    \end{equation*}
+
+    \begin{equation*}
+        c(q , D) > 0.531463
+    \end{equation*}
+
+    \begin{equation*}
+        c(q , D) > 0
+    \end{equation*}
+
+    
+    
+\end{boxC}
+
+
+\newpage
+
+\subsection{۳-ج }
+
+\begin{boxC}
+    محدودیت 
+    \lr{Lower Bound 2}
+    یک محدودیت در مدل‌های بازیابی است که بیان می‌کند که امتیاز مربوط بودن یک سند نمی‌تواند منفی باشد.
+
+    این بدان معناست که اگر سندی حاوی هیچ‌یک از اصطلاحات پرس‌وجو هم نباشد ، همچنان باید دارای امتیاز غیرمنفی‌ باشد.
+
+    این محدودیت تضمین می کند که اسناد نامربوط بالاتر از اسناد مربوطه رتبه بندی نمی شوند، حتی اگر حاوی هیچ یک از اصطلاحات پرس و جو نباشند.
+\end{boxC}

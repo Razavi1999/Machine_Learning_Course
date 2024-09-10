@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}تمرین اول }{4}{section.1}%
+\contentsline {section}{\numberline {2}تمرین دوم}{5}{section.2}%
+\contentsline {section}{\numberline {3}تمرین سوم}{6}{section.3}%
+\contentsline {section}{\numberline {4}تمرین چهارم}{7}{section.4}%
+\contentsline {section}{\numberline {5}تمرین پنجم}{8}{section.5}%

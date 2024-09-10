@@ -1,0 +1,27 @@
+\begin{boxC}
+واریانس تک تک این 
+\lr{n}
+متغیر تصادفی برابر با مجموع واریانس آن‌ها خواهد بود.
+
+می‌دانیم واریانس متغیر تصادفی برابر با امیدریاضی متغیر منهای میانگین آن متغیر خواهد بود.
+    $$
+\begin{gathered}
+\sigma_n^2(x) = \sum_{i=1}^n \varepsilon\left[\left(\frac{1}{n V_n} \phi\left(\frac{x-x_i}{h_n} -\frac{1}{n} \overline{P_n}(x)\right)\right)^2\right] \\
+
+\sigma_n^2(x)=n \varepsilon\left[\frac{1}{n^2 V_n^2} \phi^2\left(\frac{x-x_i}{h_n}\right)\right]-\frac{1}{n} \bar{P}_n^2(x) \\
+\sigma_n^2(x)=\frac{1}{n V_n} \int \frac{1}{V_n} \phi^2\left(\frac{x-V}{h_n}\right) P(V) d V-\frac{1}{n} \bar{P}_n^2(x)
+\end{gathered}
+$$
+
+برای بدست آوردن کوچکترین کران بالا واریانس متغیر ایکس ، می‌توانیم عبارت 
+$ -\frac{1}{n} \bar{P}_n^2(x) $
+در نظرنگیریم ، چون که واریانس متغیر ایکس همواره از عبارت سمت چپ کوچکتر خواهدبود.
+
+
+همانطور که روابط زیر را می‌دانیم : 
+$$
+P_n(x)=\frac{1}{n} \sum_{i=1}^n \frac{1}{V_n} \phi\left(\frac{x-x_i}{h_n}\right)
+$$
+
+$$ \sigma_n^2(x) <= \frac{\sup (\phi) \overline{P_n}(x)}{n V_n}$$
+\end{boxC}

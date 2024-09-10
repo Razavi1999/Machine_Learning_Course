@@ -1,0 +1,63 @@
+\begin{boxC}
+    \lr{To determine the Bayesian decision rule and the error of classification based on the given class-conditional probability distributions, we can use the Bayes' theorem and the minimum error rate criterion. }
+
+\lr{
+Given:
+- Class \( w_1 \) with the class-conditional probability distribution 
+\newline
+\( P(x | w_1) = \frac{3}{2} \) if \( 0 < x < \frac{2}{3} \) else 0.
+
+- Class \( w_2 \) with the class-conditional probability distribution 
+\newline
+\( P(x | w_2) = \frac{3}{2} \) if \( \frac{1}{3} < x < 1 \) else 0.
+}
+
+\lr{
+The Bayesian decision rule states that we should classify an observation \( x \) to the class that maximizes the posterior probability, which can be calculated using Bayes' theorem:
+}
+
+\[ P(w_i | x) = \frac{P(x | w_i) \cdot P(w_i)}{P(x)} \]
+
+where:
+- \( P(w_i | x) \) is the posterior probability of class \( w_i \) given observation \( x \).
+- \( P(x | w_i) \) is the class-conditional probability distribution of class \( w_i \).
+- \( P(w_i) \) is the prior probability of class \( w_i \).
+- \( P(x) \) is the total probability of observation \( x \), which can be calculated as \( P(x) = \sum_{i} P(x | w_i) \cdot P(w_i) \).
+
+\lr{The error of classification can be calculated as the probability of misclassification, which can be expressed as:}
+
+\[ P(\text{error}) = \int_{-\infty}^{\infty} \min_i [P(w_i | x)] \cdot P(x) \, dx \]
+
+\lr{
+In this specific case with the given class-conditional probability distributions and assuming equal prior probabilities (i.e., \( P(w_1) = P(w_2) = \frac{1}{2} \)), we can apply the Bayesian decision rule to determine the optimal decision boundary and calculate the error of classification based on the provided information.
+}
+\end{boxC}
+
+\begin{boxC}
+    \begin{enumerate}
+\item Given a test point $x$, find the nearest neighbor in the training set for each class.
+\item Assign the test point $x$ to the class of its nearest neighbor.
+\item Calculate the error probability by considering all possible test points and their correct class labels.
+\end{enumerate}
+
+The error probability of the nearest-neighbor classifier can be calculated as follows:
+
+Let:
+\begin{itemize}
+\item $P(w1)$ be the prior probability of class $w1$
+\item $P(w2)$ be the prior probability of class $w2$
+\item $P(x | w1)$ be the conditional probability density function of observing $x$ given class $w1$
+\item $P(x | w2)$ be the conditional probability density function of observing $x$ given class $w2$
+\item $d(x1, x2)$ be the distance metric between two points $x1$ and $x2$
+\end{itemize}
+
+The error probability for binary classification using the nearest-neighbor classifier is given by:
+\[ P(error) = P(w1) \times P(error | w1) + P(w2) \times P(error | w2) \]
+
+Where:
+\begin{itemize}
+\item $P(error | w1) = \int_{x} (P(w2 | x) \times P(x | w1)) dx$
+\item $P(error | w2) = \int_{x} (P(w1 | x) \times P(x | w2)) dx$
+\end{itemize}
+
+\end{boxC}

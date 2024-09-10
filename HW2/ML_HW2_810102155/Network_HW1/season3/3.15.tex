@@ -1,0 +1,47 @@
+\begin{boxK}
+    وقتی 
+    \lr{A} 
+    به 
+    \lr{C} 
+    می فرستد،
+  همه پل ها بسته را می بینند و یاد می گیرند که 
+  \lr{A} 
+  کجاست. با این حال،
+هنگامی که 
+\lr{C}
+سپس به
+\lr{A}
+ارسال می کند،
+
+بسته مستقیماً به A هدایت می شود و B4 یاد نمی گیرد
+جایی که C است.
+به طور مشابه، وقتی D به C ارسال می کند،
+بسته توسط B2 فقط به B3 هدایت می شود،
+  و B1 یاد نمی گیرد که D کجاست.
+
+\lr{
+B1 : A-interface: A B2-interface: C(not D)
+}
+
+\newline
+
+\lr{
+B2 : B1-interface: A B3-interface: C
+}
+
+\newline
+
+\lr{
+B3 : B2-interface: A,D C-interface: C
+}
+
+\newline
+
+\lr{
+B4 : B2-interface: A(not C) D-interface: D
+}
+
+\newline
+
+
+\end{boxK}

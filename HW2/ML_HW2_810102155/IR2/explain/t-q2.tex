@@ -1,0 +1,132 @@
+\begin{boxK}
+    \begin{equation*}
+        OKAPI-TF = \sum_{t \in q} 
+        \frac{(k_{1} + 1) * tf_{td}}{k + tf_{td}}
+    \end{equation*}
+
+    \begin{equation*}
+        BM-25 = \sum_{t \in q}
+        \log \frac{(r_{1} + 0.5)/(R - r_{i} + 0.5)}
+        {(n - r_{i} + 0.5)/(N - n_{i} - R + r_{i} + 0.5 )} * 
+        \frac{(k_{1} + 1) f_{i}}{K + f_{i}} * 
+        \frac{(k_{2} + 1) qf_{i}}{K_{2} + qf_{i}}
+    \end{equation*}
+\end{boxK}
+
+\begin{boxA}
+    \begin{center}
+        \lr{Relevance Documents to queries status}
+    \end{center}
+
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c| } 
+    \hline
+    \lr{Relevance} & \lr{D1} & \lr{D2} & \lr{D3} \\
+    \hline
+    \lr{Q1} & YES & YES & NO \\ 
+    \lr{Q2} & NO & YES & NO \\  
+    \lr{Q3} & NO & YES & NO \\ 
+    \hline
+    \end{tabular}
+    \end{center}
+\end{boxA}
+
+\begin{boxC}
+    متغیر
+    \lr{b}
+    تاثیر طول سند را کنترل می‌کند.
+
+    متغیر
+    \lr{k}
+    تاثیر تکرار عبارت‌ها را کنترل می‌کند.
+
+    \begin{center}
+    \lr{Okapi(Q1 , D1) = 1.3422}
+    \newline
+    \lr{Okapi(Q1 , D2) = 0.9174}
+    \newline
+    \lr{Okapi(Q1 , D3) = 0}
+    \newline
+    \lr{Okapi(Q2 , D1) = 1.3422}
+    \newline
+    \lr{Okapi(Q2 , D2) = 1.8265}
+    \newline
+    \lr{Okapi(Q2 , D3) = 0.88105}
+    \newline
+    \lr{Okapi(Q3 , D1) = 2.22333}
+    \newline
+    \lr{Okapi(Q3 , D2) = 2.74395}
+    \newline
+    \lr{Okapi(Q3 , D3) = 1.76211}
+    \newline
+    \end{center}
+\end{boxC}
+
+\newpage
+
+\begin{boxC}
+    \begin{center}
+    \lr{BM-25(Q1 , D1) = -1.4746}
+    \newline
+    \lr{BM-25(Q1 , D2) = -1.0079}
+    \newline
+    \lr{BM-25(Q1 , D3) = 0}
+    \newline
+    \lr{BM-25(Q2 , D1) = 2.9492}
+    \newline
+    \lr{BM-25(Q2 , D2) = 2.006639}
+    \newline
+    \lr{BM-25(Q2 , D3) = 0.967940}
+    \newline
+    \lr{BM-25(Q3 , D1) = 1.474647}
+    \newline
+    \lr{BM-25(Q3 , D2) = 3.01454}
+    \newline
+    \lr{BM-25(Q3 , D3) = 1.9358}
+    \newline
+    \end{center}
+
+    \begin{center}
+    \lr{Rankings Based on BM-25 Scoring}
+    \newline
+    \lr{Q1 : (1) D3 , (2) D2 , (3) D1}
+    \newline
+    \lr{Q2 : (1) D1 , (2) D2 , (3) D3}
+    \newline
+    \lr{Q3 : (1) D2 , (2) D3 , (3) D1}
+    \newline
+    \end{center}
+\end{boxC}
+
+\begin{boxA}
+    \lr{Okapi-TF}
+    و
+    \lr{BM-25}
+    هر دو الگوریتم‌های رتبه‌بندی و امتیازدهی هستند که در سیستم‌های 
+    \lr{IR}
+    استفاده می‌شوند.
+
+    الگوریتم 
+    \lr{Okapi-TF}
+    یک الگوریتم رتبه‌بندی است که فراوانی ترم ها را در سند بررسی می‌کند و با فرض این‌ که هر چه یک کوئری ترم در سند بیشتر باشد ، آن ترم با سند مرتبط‌تر است.
+
+    \lr{BM-25(Best Matching 25)}
+    همچنین یک الگوریتم رتبه‌بندی است که علاوه بر فراوانی کوئری‌ترم‌ها ، از رویکردی احتمالی برای رتبه‌بندی اسناد استفاده می‌کند.
+    (از جمله محاسبه 
+    \lr{IDF}
+    )
+
+    مزیت الگوریتم 
+    \lr{BM-25}
+    در آن است که طول سند و آمار کل 
+    \lr{Collection}
+    را درنظر می‌گیرد در حالی که در الگوریتم
+    \lr{Okapi-TF}
+    اینطور نیست.
+
+    این امر باعث می‌شود که الگوریتم 
+    \lr{BM-25}
+    در امتیازدهی موثرتر واقع شود.
+\end{boxA}
+
+\newpage

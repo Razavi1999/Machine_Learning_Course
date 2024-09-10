@@ -1,0 +1,55 @@
+\begin{boxC}
+
+% \RaggedRight
+
+\lr{
+Given the expression \( p(x) = \frac{1}{a} \left( 1 - e^{-\frac{x}{h_n}} \right) \) for \( 0 < x < a \) and \( p(x) = \frac{1}{a} \left( e^{\frac{a}{h_n}} - 1 \right) e^{-\frac{x}{h_n}} \) for \( x \geq a \), we aim to calculate the mean estimate of the Parzen window function using this probability distribution.
+}
+
+\lr{
+The mean estimate of a function \( g(x) \) with respect to a probability distribution \( p(x) \) over the interval \( [0, a] \) is given by:
+}
+
+\[ \text{Mean}(g) = \int_{0}^{a} g(x) \cdot p(x) \, dx \]
+
+\lr{
+Given the probability distribution \( p(x) \) as specified, and the Parzen window function \( \varphi(x) = e^{-x} \) if \( x > 0 \) else 0, we can calculate the mean estimate as follows:
+}
+
+
+\[ \text{Mean}(\varphi) = \int_{0}^{a} \varphi(x) \cdot p(x) \, dx = \int_{0}^{a} e^{-x} \cdot \frac{1}{a} \left( 1 - e^{-\frac{x}{h_n}} \right) \, dx \]
+
+\lr{
+Now, we need to split the integral into two parts: one for \( 0 < x < a \) and another for \( x \geq a \).
+}
+
+\lr{For \( 0 < x < a \):}
+
+\[ \begin{aligned} 
+\int_{0}^{a} e^{-x} \cdot \frac{1}{a} \left( 1 - e^{-\frac{x}{h_n}} \right) \, dx \\
+&= \frac{1}{a} \int_{0}^{a} e^{-x} - e^{-x - \frac{x}{h_n}} \, dx \\
+&= \frac{1}{a} \left[ -e^{-x} + h_n e^{-x - \frac{x}{h_n}} \right] \Bigg|_{0}^{a} \\
+&= \frac{1}{a} \left[ -e^{-a} + h_n e^{-a - \frac{a}{h_n}} + e^0 - h_n e^0 \right]
+\end{aligned} \]
+
+For \( x \geq a \):
+\[ \begin{aligned} 
+\int_{a}^{\infty} e^{-x} \cdot \frac{1}{a} \left( e^{\frac{a}{h_n}} - 1 \right) e^{-\frac{x}{h_n}} \, dx \\
+&= \frac{1}{a} \left( e^{\frac{a}{h_n}} - 1 \right) \int_{a}^{\infty} e^{-\frac{2x}{h_n} + \frac{a}{h_n}} \, dx \\
+&= \frac{1}{a} \left( e^{\frac{a}{h_n}} - 1 \right) \left[ \frac{h_n}{2h_n} e^{\frac{a}{h_n} - \frac{2a}{h_n}} \right] \\
+&= \frac{1}{a} \left( e^{\frac{a}{h_n}} - 1 \right) \cdot \frac{1}{2} e^{-\frac{a}{h_n}}
+\end{aligned} \]
+
+\lr{
+Therefore, the mean estimate of the Parzen window function with respect to the given probability distribution is the sum of these two parts:
+}
+
+\[ \begin{aligned} 
+\text{Mean}(\varphi) &= \frac{1}{a} \left[ -e^{-a} + h_n e^{-a - \frac{a}{h_n}} + e^0 - h_n e^0 \right] \\
+&\quad + \frac{1}{a} \left( e^{\frac{a}{h_n}} - 1 \right) \cdot \frac{1}{2} e^{-\frac{a}{h_n}}
+\end{aligned} \]
+
+\lr{
+This expression represents the mean estimate of the Parzen window function based on the specified probability distribution. Further simplification can be done if necessary.}
+
+\end{boxC}
